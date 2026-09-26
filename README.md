@@ -6,11 +6,6 @@ lifecycle: typed events, a single-authority state machine, layered
 verification gates, bounded repair, and a hash-chained decision log that
 supports exact replay.
 
-> **Publication warning.** This repository is a local research prototype.
-> Do not push it to any public remote, publish it, or disclose its contents
-> until the publication decision is explicitly authorized. There is no
-> remote configured; keep it that way.
-
 ## What it does
 
 ```
@@ -63,6 +58,13 @@ tests/            unit + integration
 docs/             architecture, evaluation, CLI adapter wiring
 results/          metrics.json, run_table.json, manifest.json, README.md
 ```
+
+## Documentation
+
+- [Setup](docs/SETUP.md) — prerequisites, install, and troubleshooting.
+- [Usage](docs/USAGE.md) — CLI reference, custom agents and gates, metrics, replay.
+- [Architecture](docs/architecture.md), [Evaluation](docs/evaluation.md),
+  [CLI adapter wiring](docs/cli-adapter.md) — design references.
 
 ## Measured results (v1)
 
