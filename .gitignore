@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+# Measured-run workspaces and logs are reproducible via `harness run-eval`;
+# only the summary artifacts are committed.
+/results/runs/
+/results/demo/
