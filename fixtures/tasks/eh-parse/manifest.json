@@ -1,0 +1,33 @@
+{
+  "task_id": "eh-parse",
+  "category": "error-handling",
+  "goal": "Implement parse_int(s): parse an int, raising ParseError naming the bad input.",
+  "allowed_paths": [
+    "impl.py",
+    "tests/",
+    "schemas/"
+  ],
+  "needs": [
+    "fs.read",
+    "fs.write.isolated"
+  ],
+  "commands": {
+    "lint": [
+      "python",
+      "-m",
+      "harness.gates.lint_check"
+    ],
+    "test": [
+      "python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q"
+    ]
+  },
+  "contract": {
+    "baseline": "schemas/baseline.json",
+    "candidate": "schemas/candidate.json"
+  },
+  "gate_timeout_s": 120
+}
