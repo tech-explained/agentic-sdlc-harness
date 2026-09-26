@@ -1,0 +1,33 @@
+{
+  "task_id": "ll-retry",
+  "category": "local-logic",
+  "goal": "Implement retry_call(fn, attempts): call fn, retrying on Exception; return (result, attempts_used).",
+  "allowed_paths": [
+    "impl.py",
+    "tests/",
+    "schemas/"
+  ],
+  "needs": [
+    "fs.read",
+    "fs.write.isolated"
+  ],
+  "commands": {
+    "lint": [
+      "python",
+      "-m",
+      "harness.gates.lint_check"
+    ],
+    "test": [
+      "python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q"
+    ]
+  },
+  "contract": {
+    "baseline": "schemas/baseline.json",
+    "candidate": "schemas/candidate.json"
+  },
+  "gate_timeout_s": 120
+}
