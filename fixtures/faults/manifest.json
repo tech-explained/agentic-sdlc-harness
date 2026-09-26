@@ -1,0 +1,62 @@
+{
+  "faults": [
+    {
+      "fault_id": "F1",
+      "task_id": "ll-discount",
+      "expected_detector": "lint",
+      "kind": "append_text",
+      "path": "impl.py",
+      "text": "\nimport os\n",
+      "description": "style/unused-import"
+    },
+    {
+      "fault_id": "F2",
+      "task_id": "eh-validate",
+      "expected_detector": "test-execution",
+      "kind": "replace",
+      "path": "impl.py",
+      "find": "not 0 <= age <= 150",
+      "replace": "not 0 <= age <= 15",
+      "description": "incorrect branch result"
+    },
+    {
+      "fault_id": "F3",
+      "task_id": "ll-stats",
+      "expected_detector": "test-execution",
+      "kind": "replace",
+      "path": "impl.py",
+      "find": "    if n % 2:\n        return s[mid]\n    return (s[mid - 1] + s[mid]) / 2",
+      "replace": "    raise NotImplementedError",
+      "description": "deleted required behavior"
+    },
+    {
+      "fault_id": "F4",
+      "task_id": "ps-inventory",
+      "expected_detector": "contract-compatibility",
+      "kind": "json_remove_required",
+      "path": "schemas/candidate.json",
+      "at": "root",
+      "field": "quantity",
+      "description": "removed required schema field"
+    },
+    {
+      "fault_id": "F5",
+      "task_id": "ps-shipment",
+      "expected_detector": "contract-compatibility",
+      "kind": "json_narrow_type",
+      "path": "schemas/candidate.json",
+      "at": "properties.attempt",
+      "to_type": "string",
+      "description": "narrowed schema field type"
+    },
+    {
+      "fault_id": "F6",
+      "task_id": "cs-order",
+      "expected_detector": "lint",
+      "kind": "write_outside_allowed",
+      "path": "exfiltrated.txt",
+      "text": "internal notes: do not ship\n",
+      "description": "write outside allowed paths"
+    }
+  ]
+}
