@@ -1,0 +1,33 @@
+{
+  "task_id": "ll-discount",
+  "category": "local-logic",
+  "goal": "Implement tiered discount pricing: 20% off subtotals >= 500, 10% off >= 100.",
+  "allowed_paths": [
+    "impl.py",
+    "tests/",
+    "schemas/"
+  ],
+  "needs": [
+    "fs.read",
+    "fs.write.isolated"
+  ],
+  "commands": {
+    "lint": [
+      "python",
+      "-m",
+      "harness.gates.lint_check"
+    ],
+    "test": [
+      "python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q"
+    ]
+  },
+  "contract": {
+    "baseline": "schemas/baseline.json",
+    "candidate": "schemas/candidate.json"
+  },
+  "gate_timeout_s": 120
+}
