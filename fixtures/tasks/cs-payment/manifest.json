@@ -1,0 +1,33 @@
+{
+  "task_id": "cs-payment",
+  "category": "consumer-schema",
+  "goal": "Implement authorize_payment(event): authorize when amount > 0 and currency is USD/EUR.",
+  "allowed_paths": [
+    "impl.py",
+    "tests/",
+    "schemas/"
+  ],
+  "needs": [
+    "fs.read",
+    "fs.write.isolated"
+  ],
+  "commands": {
+    "lint": [
+      "python",
+      "-m",
+      "harness.gates.lint_check"
+    ],
+    "test": [
+      "python",
+      "-m",
+      "pytest",
+      "tests",
+      "-q"
+    ]
+  },
+  "contract": {
+    "baseline": "schemas/baseline.json",
+    "candidate": "schemas/candidate.json"
+  },
+  "gate_timeout_s": 120
+}
